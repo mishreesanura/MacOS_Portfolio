@@ -31,47 +31,53 @@ const setupTextHover = (container, type) => {
     ease: "power2.out",
     fontVariationSettings: `'wght' ${weight}`,
   });
- };
+};
 
- const handleMouseMove = (e) => {
+const handleMouseMove = (e) => {
   const { left } = container.getBoundingClientRect();
   const mouseX = e.clientX - left;
 
   letters.forEach((letter) => {
     const { left: l, width: w } = letter.getBoundingClientRect();
-
     const distance = Math.abs(mouseX - (l - left + w / 2));
     const intensity = Math.exp(-(distance ** 2) / 2000);
 
     animateLetter(letter, min + (max - min) * intensity);
   });
+};
+
+const handleMouseLeave = () => {
+  letters.forEach((letter) => animateLetter(letter, base,0.3));
+}
+
+container.addEventListener("mousemove", handleMouseMove);
+container.addEventListener("mouseleave", handleMouseLeave);
+
+  return () => {
+  container.removeEventListener("mousemove", handleMouseMove);
+  container.removeEventListener("mouseleave", handleMouseLeave);  
  };
-
- const handleMouseLeave = () => letters.forEach((letter) => animateLetter(letter, base,0.3));
- 
- container.addEventListener("mousemove", handleMouseMove);
- container.addEventListener("mouseleave",handleMouseLeave);
-
- return () => {
-    container.removeEventListener("mousemove",handleMouseMove);
-    container.removeEventListener("mouseleave",handleMouseLeave);
- }
 };
 
 const Welcome = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
 
-  useGSAP(() => {
-  setupTextHover(titleRef.current, "title");
-  setupTextHover(subtitleRef.current, "subtitle");
+useGSAP(() => {
+  const titleCleanup =  setupTextHover(subtitleRef.current, "subtitle");
+  const subtitleCleanup = setupTextHover(titleRef.current, "title");
+
+  return () => {
+    titleCleanup();
+    subtitleCleanup();
+  };
 }, []);
 
   return (
   <section id="welcome">
     <p ref={subtitleRef}>
       {renderText(
-        "Hey, I'm Mishree! Welcome to my",
+        "Hey, I'm Adrian! Welcome to my",
         "text-3xl font-georama",
         100
       )}
@@ -82,7 +88,7 @@ const Welcome = () => {
     </h1>
 
     <div className="small-screen">
-      <p>This Portfolio is designed for desktop/tablet screens only.</p>
+      <p>This Portfolio is designed for desktop/tabled screens only.</p>
     </div>
   </section>
 );
