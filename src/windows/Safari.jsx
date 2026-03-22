@@ -1,6 +1,16 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import WindowControls from "#components/WindowControls.jsx";
-import { ChevronLeft, ChevronRight, MoveRight, PanelLeft } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  MoveRight,
+  PanelLeft,
+  Search,
+  ShieldHalf,
+  Share,
+  Plus,
+  Copy,
+} from "lucide-react";
 import { blogPosts } from "#constants";
 
 const Safari = () => {
@@ -37,8 +47,8 @@ const Safari = () => {
         </div>
       </div>
 
-      <div className="blog">
-  <h2>My Developer Blog</h2>
+        <div className="blog">
+      <h2>Featured Project Highlights</h2>
 
   <div className="space-y-8">
     {blogPosts.map(({ id, image, title, date, link }) => (
@@ -51,7 +61,7 @@ const Safari = () => {
           <p>{date}</p>
           <h3>{title}</h3>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            Check Out the full post <MoveRight className="icon-hover" />
+            Open project link <MoveRight className="icon-hover" />
           </a>
         </div>
       </div>

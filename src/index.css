@@ -174,23 +174,29 @@ body {
       @apply text-sm font-roboto p-5;
 
       .label {
-        @apply flex items-center ms-10 mt-7;
+        @apply grid items-center mt-7 text-black;
+        grid-template-columns: 1.5rem 10rem minmax(0, 1fr);
+        column-gap: 1.25rem;
       }
 
       .content {
         @apply py-5 my-5 border-y border-dashed space-y-1;
 
-        li {
+        .stack-row {
+          @apply grid items-start;
+          grid-template-columns: 1.5rem 10rem minmax(0, 1fr);
+          column-gap: 1.25rem;
+
           .check {
             @apply text-[#00A154] w-5;
           }
 
           h3 {
-            @apply font-semibold text-[#00A154] w-32 ms-5;
+            @apply font-semibold text-[#00A154];
           }
 
-          ul {
-            @apply flex items-center gap-3;
+          .stack-items {
+            @apply leading-8 break-words;
           }
         }
       }

@@ -77,7 +77,7 @@ useGSAP(() => {
   <section id="welcome">
     <p ref={subtitleRef}>
       {renderText(
-        "Hey, I'm Adrian! Welcome to my",
+        "Hey, I'm Mishree! Welcome to my",
         "text-3xl font-georama",
         100
       )}

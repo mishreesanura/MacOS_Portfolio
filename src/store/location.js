@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { locations } from "#constants";
 
-const DEFAULT_LOCATION = locations.work;
+const DEFAULT_LOCATION = locations.work.children[0] ?? locations.work;
 
 const useLocationStore = create(
   immer((set) => ({

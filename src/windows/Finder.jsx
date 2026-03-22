@@ -10,6 +10,11 @@ const Finder = () => {
   const { openWindow } = useWindowStore();
   const { activeLocation, setActiveLocation } = useLocationStore();
 
+  const isActiveItem = (item) =>
+    item.id === activeLocation?.id &&
+    item.name === activeLocation?.name &&
+    item.kind === activeLocation?.kind;
+
   const openItem = (item) => {
     if (item.fileType === "pdf") return openWindow('resume');
     if (item.fileType === "txt") return openWindow("txtfile", item);
@@ -30,7 +35,7 @@ const Finder = () => {
           key={item.id}
           onClick={() => setActiveLocation(item)}
           className={clsx(
-            item.id === activeLocation.id ? "active" : "not-active"
+            isActiveItem(item) ? "active" : "not-active"
           )}
         >
           <img src={item.icon} className="w-4" alt={item.name} />
