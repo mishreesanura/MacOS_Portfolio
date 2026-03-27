@@ -7,7 +7,7 @@ import useWindowStore from "#store/window.js";
 
 const Dock = () => {
 
-    const {openWindow, closeWindow, windows} = useWindowStore();
+  const {openWindow, closeWindow, minimizeWindow, windows} = useWindowStore();
   const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -60,7 +60,9 @@ const Dock = () => {
         console.error(`No window config found for ${app.id}`);
         return;
     }
-    if (window.isOpen) {
+    if (window.isOpen && window.isMinimized) {
+      minimizeWindow(app.id);
+    } else if (window.isOpen) {
         closeWindow(app.id);
     } else {
         openWindow(app.id);

@@ -107,11 +107,11 @@ body {
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply size-3.5 rounded-full bg-[#ffc030] cursor-pointer;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
     }
   }
 
@@ -244,20 +244,22 @@ body {
   }
 
   #photos {
-    @apply max-w-3xl absolute top-96 left-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply absolute top-24 left-3/12 w-[min(92vw,920px)] bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     .sidebar {
-      @apply w-3/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
+      @apply w-56 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-4;
 
       h2 {
-        @apply text-xs font-medium text-gray-400 mb-1;
+        @apply text-xs font-medium text-gray-400 mb-2;
       }
 
       ul {
-        li {
-          @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+        @apply space-y-1;
 
-          &:first-child {
+        li {
+          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors text-gray-700 hover:bg-gray-200;
+
+          &.active {
             @apply bg-blue-100 text-blue-700;
           }
 
@@ -273,14 +275,32 @@ body {
     }
 
     .gallery {
-      @apply p-5;
+      @apply p-4 bg-white flex-1;
+
+      .toolbar {
+        @apply flex items-center justify-between gap-3 mb-4;
+
+        p {
+          @apply text-xs text-gray-500;
+        }
+      }
+
+      .search-box {
+        @apply flex items-center gap-2 w-72 bg-gray-100 border border-gray-200 rounded-lg px-3 py-1.5 text-gray-500;
+
+        input {
+          @apply w-full bg-transparent text-sm text-gray-700 placeholder:text-gray-400 outline-none;
+        }
+      }
 
       ul {
         @apply grid grid-cols-5 grid-rows-5 gap-2.5;
 
         li {
+          @apply cursor-pointer;
+
           img {
-            @apply size-full object-cover rounded-lg;
+            @apply size-full object-cover rounded-lg transition-transform duration-200 hover:scale-[1.02];
           }
 
           &:first-child {
@@ -299,6 +319,10 @@ body {
             @apply row-start-4 row-span-2 col-start-1 col-span-2;
           }
         }
+      }
+
+      .empty-state {
+        @apply h-[280px] col-center text-gray-500 text-sm;
       }
     }
   }

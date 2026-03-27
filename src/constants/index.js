@@ -77,25 +77,10 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Feb 2026",
-    title: "Ritu: AI-Powered Period Tracking and Wellness Platform",
-    image: "/images/ritu-1.png",
-    link: "https://ritu-period-tracking.vercel.app/",
-  },
-  {
-    id: 2,
-    date: "Mar 2026",
-    title: "Finsight.AI: Natural-Language Data Analytics Agent",
-    image: "/images/project-2.png",
-    link: "https://github.com/mishreesanura/insightx-chat",
-  },
-  {
-    id: 3,
-    date: "Nov 2025",
-    title:
-      "Veracity: AI-Powered Misinformation Detection and Crisis Intelligence",
-    image: "/images/project-3.png",
-    link: "https://github.com/mishreesanura/Veracity",
+    date: "Dec 2024",
+    title: "Smart India Hackathon 2024 Winner - Team CodeZ",
+    image: "/images/sih-photo.jpeg",
+    link: "https://indianexpress.com/article/cities/ahmedabad/gujarat-ten-teams-declared-winners-at-smart-india-hackathon-2024-9724029/",
   },
 ];
 
@@ -149,26 +134,31 @@ const socials = [
 const photosLinks = [
   {
     id: 1,
+    type: "hackathons",
     icon: "/icons/gicon1.svg",
     title: "Hackathons",
   },
   {
     id: 2,
+    type: "projects",
     icon: "/icons/gicon2.svg",
     title: "Projects",
   },
   {
     id: 3,
+    type: "work",
     icon: "/icons/file.svg",
     title: "Work",
   },
   {
     id: 4,
+    type: "teams",
     icon: "/icons/gicon4.svg",
     title: "Teams",
   },
   {
     id: 5,
+    type: "highlights",
     icon: "/icons/gicon5.svg",
     title: "Highlights",
   },
@@ -177,19 +167,31 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/gall1.jpeg",
+    title: "Mumbai Hacks 2025",
+    category: "hackathons",
+    alt: "Hackathon event capture",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/gall2.jpeg",
+    title: "/images/gall2.jpeg",
+    category: "projects",
+    alt: "JavaScript mastery thumbnail",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
+    img: "/images/sih-photo.jpeg",
+    title: "Team roundtable",
+    category: "teams",
+    alt: "Two teammates in a discussion",
   },
   {
     id: 4,
-    img: "/images/gal4.png",
+    img: "/images/mish-photo.jpeg",
+    title: "Panel conversation",
+    category: "highlights",
+    alt: "Three participants during a panel",
   },
 ];
 
@@ -235,7 +237,7 @@ const WORK_LOCATION = {
         },
         {
           id: 2,
-          name: "ritu-period-tracking.vercel.app",
+          name: "Working Link",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
@@ -244,7 +246,7 @@ const WORK_LOCATION = {
         },
         {
           id: 3,
-          name: "Ritu Screenshots",
+          name: "Ritu Project Screenshots",
           icon: "/images/folder.png",
           kind: "folder",
           position: "top-52 right-80",
@@ -332,7 +334,7 @@ const WORK_LOCATION = {
         },
         {
           id: 2,
-          name: "github.com/mishreesanura/insightx-chat",
+          name: "GitHub Repository Link",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
@@ -340,13 +342,41 @@ const WORK_LOCATION = {
           position: "top-20 left-20",
         },
         {
-          id: 4,
-          name: "finsight-preview.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
+          id: 3,
+          name: "Finsight Screenshots",
+          icon: "/images/folder.png",
+          kind: "folder",
           position: "top-52 left-80",
-          imageUrl: "/images/project-2.png",
+          windowPosition: "top-[10vh] left-20",
+          children: [
+            {
+              id: 1,
+              name: "finsight1.png",
+              icon: "/images/image.png",
+              kind: "file",
+              fileType: "img",
+              position: "top-5 left-10",
+              imageUrl: "/images/finsight1.png",
+            },
+            {
+              id: 2,
+              name: "finsight2.png",
+              icon: "/images/image.png",
+              kind: "file",
+              fileType: "img",
+              position: "top-5 left-44",
+              imageUrl: "/images/finsight2.png",
+            },
+            {
+              id: 3,
+              name: "finsight3.gif",
+              icon: "/images/image.png",
+              kind: "file",
+              fileType: "img",
+              position: "top-5 left-80",
+              imageUrl: "/images/finsight3.gif",
+            },
+          ],
         },
       ],
     },
@@ -374,7 +404,7 @@ const WORK_LOCATION = {
         },
         {
           id: 2,
-          name: "github.com/mishreesanura/Veracity",
+          name: "GitHub Repository Link",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
@@ -409,26 +439,26 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/gal1.png",
+      imageUrl: "/images/mish-photo.jpeg",
     },
-    {
-      id: 2,
-      name: "profile-2.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-28 right-72",
-      imageUrl: "/images/gal2.png",
-    },
-    {
-      id: 3,
-      name: "profile-3.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-52 left-80",
-      imageUrl: "/images/gal3.png",
-    },
+    // {
+    //   id: 2,
+    //   name: "profile-2.png",
+    //   icon: "/images/image.png",
+    //   kind: "file",
+    //   fileType: "img",
+    //   position: "top-28 right-72",
+    //   imageUrl: "/images/gal2.png",
+    // },
+    // {
+    //   id: 3,
+    //   name: "profile-3.png",
+    //   icon: "/images/image.png",
+    //   kind: "file",
+    //   fileType: "img",
+    //   position: "top-52 left-80",
+    //   imageUrl: "/images/gal3.png",
+    // },
     {
       id: 4,
       name: "about-mishree.txt",
@@ -437,7 +467,7 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Mishree Sanura - Builder, Leader, and AI Developer",
-      image: "/images/gal4.png",
+      // image: "/images/gal4.png",
       description: [
         "I am Mishree Sanura, a B.Tech Information Technology student at Dwarkadas J. Sanghvi College of Engineering (2023 to 2027), currently with a CGPA of 8.7.",
         "I focus on building AI-powered products and modern web platforms using Next.js, React, and data-driven backend systems.",
@@ -503,14 +533,14 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  contact: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  resume: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  safari: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  photos: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  terminal: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  txtfile: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  imgfile: { isOpen: false, isMinimized: false, isFullscreen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

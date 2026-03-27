@@ -1,13 +1,13 @@
 import useWindowStore from "#store/window.js";
 
 const WindowControls = ({ target }) => {
-  const { closeWindow } = useWindowStore();
+  const { closeWindow, minimizeWindow, toggleFullscreen } = useWindowStore();
 
   return (
     <div id="window-controls">
       <div className="close" onClick={() => closeWindow(target)} />
-      <div className="minimize" />
-      <div className="maximize" />
+      <div className="minimize" onClick={() => minimizeWindow(target)} />
+      <div className="maximize" onClick={() => toggleFullscreen(target)} />
     </div>
   );
 };
